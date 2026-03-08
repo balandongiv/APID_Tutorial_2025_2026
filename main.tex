@@ -1,0 +1,57 @@
+\documentclass{clgrammar}
+
+\newif\iflecturer
+\lecturertrue      % show justifications/solutions/ remark,notes
+% \lecturerfalse      % student clean exam
+
+\iflecturer
+  \newtcolorbox{lectureronly}{
+    colback=yellow!10!white,
+    colframe=yellow!50!black,
+    title=Lecturer Only Content,
+    fonttitle=\bfseries,
+    fontupper=\small\itshape
+  }
+\else
+  \newtcolorbox{lectureronly}{
+    visible=false,
+    height=0pt,
+    left=0pt, right=0pt, top=0pt, bottom=0pt, boxsep=0pt,
+    boxrule=0pt, colframe=white, colback=white
+  }
+  % A better way to hide it completely including spacing might be needed, 
+  % but tcolorbox with visible=false usually works well enough or using 'comment' package.
+  % However, if we want to truly skip compilation of the body to avoid errors in hidden mode:
+  % \excludecomment{lectureronly} % requires 'comment' package
+\fi
+
+\title{TUTORIAL FOR COMPUTER PROGRAMMING}
+
+\author{RODNEY PETRUS BALANDONG}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+%\listofchanges
+
+\include{preface}
+
+\mainmatter
+
+    % \include{session1/ses1}
+    \include{session2/ses2}
+    \include{session3/ses3}
+    \include{session4/ses4}
+    \include{session5/ses5}
+    \include{session6/ses6}
+    \include{session7/ses7}
+    \include{session8/ses8}
+    \include{session9/ses9}
+    
+    \appendix
+    \include{appendix/revision_history}
+    
+    \end{document}
+    

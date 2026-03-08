@@ -1,0 +1,244 @@
+\chapter{Classes and Objects}
+% This session refactors your session 5 Iris classifier using Object-Oriented Programming (OOP).
+% The goal is to bundle the configuration (threshold) and the behavior (prediction logic) together in a class named \texttt{IrisRuleClassifier}.
+
+\section{Introduction}
+In session 4 and session 5, you built an Iris classifier using \textbf{functions}.
+Your pipeline worked, but you may have noticed a design pattern:
+many functions needed the same configuration values (for example, the threshold and the label names), so you passed a dictionary called \texttt{settings} around repeatedly.
+
+\noindent
+\textbf{Why refactor?}
+That function-based design is fine for one small classifier, but it becomes awkward as soon as you want to run experiments:
+\begin{itemize}\setlength{\itemsep}{2pt}
+    \item If you want 10 classifiers with 10 thresholds, you now need 10 different \texttt{settings} dictionaries.
+    \item Every time you call a function, you must remember to pass the correct \texttt{settings}.
+    \item If you add one new setting later, you must update many function signatures and many function calls.
+\end{itemize}
+
+\noindent
+This session (Session 6), you refactor your session 5 design using \textbf{Object-Oriented Programming (OOP)}.
+The core idea is simple:
+\begin{quote}
+\textbf{Bundle the data (configuration) and the behavior (functions) together.}
+\end{quote}
+
+\noindent
+In Python, that bundle is called a \textbf{class}.
+\begin{itemize}\setlength{\itemsep}{2pt}
+    \item A \textbf{class} is a blueprint that describes what data and behavior a thing should have.
+    \item An \textbf{object} is a single instance created from that blueprint.
+    \item An \textbf{attribute} is data stored on the object (for example, \texttt{self.threshold}).
+    \item A \textbf{method} is a function stored on the class that operates on the object (for example, \texttt{predict()} and \texttt{evaluate()}).
+\end{itemize}
+
+\noindent
+\textbf{Refactoring promise:} the classifier rule itself stays the same.
+This session reorganizes code, but it should \textbf{not change} what ``setosa'' means or how the threshold rule works.
+
+\noindent
+\textbf{The Goal:} refactor your session 5 classifier into a class named \texttt{IrisRuleClassifier} so each object ``remembers'' its own threshold.
+
+\subsection{Transition Map: session 5 Functions $\rightarrow$ session 6 Class}
+The classifier logic itself (``if petal\_length $<$ threshold \dots'') remains exactly the same.
+What changes is \textit{where} that logic lives and \textit{how} you access it.
+
+\noindent
+Use this table as your translation guide. It shows how session 5 functions and settings translate into session 6 attributes and methods:
+
+\input{session6/tab6.tex}
+
+\subsection{Deliverable}
+Open or create \texttt{session6/session6\_iris\_template.py}.
+By the end of this session, it will contain:
+\begin{itemize}\setlength{\itemsep}{2pt}
+    \item a complete \texttt{IrisRuleClassifier} class (constructor + methods),
+    \item a small \texttt{main()} script that creates objects and evaluates them.
+\end{itemize}
+\noindent
+Think of this as turning your session 5 pipeline into a reusable component you can instantiate many times.
+
+
+\section{The Blueprint and Data (\texttt{\_\_init\_\_})}
+
+\subsection{Step 1: The Blueprint and Data (\texttt{\_\_init\_\_})}
+A class starts with a special constructor method called \texttt{\_\_init\_\_}.
+This method runs \textbf{automatically} when you create a new object.
+Its job is to put the object into a valid starting state.
+
+\noindent
+In session 5, you used \texttt{get\_default\_settings()} to build a dictionary.
+In session 6, you store that information as \textbf{attributes} on \texttt{self}.
+\texttt{self} is how a method refers to the current object.
+
+\begin{minted}[fontsize=\small, linenos]{python}
+class IrisRuleClassifier:
+    def __init__(self, threshold=2.0):
+        # Store configuration inside the instance (self)
+        self.threshold = threshold
+        
+        # Store labels so they are not hardcoded in multiple places
+        self.positive_label = "setosa"
+        self.negative_label = "not_setosa"
+\end{minted}
+
+\noindent
+\textbf{Task:}
+\begin{enumerate}
+    \item Define this class in your file.
+    \item Below the class definition, create an instance: \texttt{my\_clf = IrisRuleClassifier(threshold=2.5)}.
+    \item Print the stored threshold: \texttt{print("Threshold:", my\_clf.threshold)}.
+\end{enumerate}
+\noindent
+\textbf{Before you code (reasoning):} list the values that were previously inside \texttt{settings}.
+Those values are good candidates to become attributes on the class.
+
+\noindent
+\textbf{After you code (verification):} you should be able to create two objects with different thresholds and see that each object stores its own value.
+\begin{minted}[fontsize=\small, linenos]{python}
+clf_a = IrisRuleClassifier(threshold=1.5)
+clf_b = IrisRuleClassifier(threshold=2.5)
+print(clf_a.threshold, clf_b.threshold)  # should print two different numbers
+\end{minted}
+\noindent
+\textbf{Common beginner pitfall:} forgetting \texttt{self}.
+Inside methods you must write \texttt{self.threshold}, not just \texttt{threshold}, because \texttt{threshold} is not a global variable.
+
+
+\section{Method in (\texttt{class})}
+
+\subsection{Step 2: The Logic (\texttt{predict})}
+In session 5, you wrote \texttt{classify\_sample(sample, settings)}.
+In session 6, this becomes a \textbf{method}.
+Because \texttt{threshold} and the labels already live on \texttt{self}, you no longer need a \texttt{settings} dictionary argument.
+
+\noindent
+Conceptually, you are changing:
+\begin{quote}
+\texttt{classify\_sample(sample, settings)} $\rightarrow$ \texttt{my\_clf.predict(sample)}
+\end{quote}
+Instead of passing configuration into every call, you ask the configured object to do the work.
+
+\begin{minted}[fontsize=\small, linenos]{python}
+    def predict(self, sample):
+        # We assume sample is a dict with 'petal_length'
+        if sample["petal_length"] < self.threshold:
+            return self.positive_label
+        return self.negative_label
+\end{minted}
+
+\noindent
+\textbf{Task:} Add this method to your class (indented inside the class).
+\noindent
+\textbf{Before you code (reasoning):} identify which inputs are ``per sample'' and which inputs are ``settings''.
+\texttt{sample} changes every iteration, so it stays an argument. \texttt{threshold} is a setting, so it becomes \texttt{self.threshold}.
+
+\noindent
+\textbf{After you code (verification):} call \texttt{my\_clf.predict(...)} on a single dictionary and make sure you get either \texttt{"setosa"} or \texttt{"not\_setosa"}.
+
+\subsection{Step 3: Processing the Dataset (Evaluation)}
+In session 5, you had a function \texttt{initialize\_predictions} that looped over the data.
+We will now create a method \texttt{evaluate(self, dataset)} that does the entire prediction loop and calculates accuracy.
+
+\noindent
+\textbf{Why make this a method?}
+Because evaluation depends on \texttt{predict()}, and \texttt{predict()} depends on the object's configuration.
+By keeping them together, you avoid passing settings around and you reduce the chance of mixing up configurations.
+
+\begin{minted}[fontsize=\small, linenos]{python}
+    def evaluate(self, dataset):
+        correct = 0
+        total = 0
+        
+        for sample in dataset:
+            # 1. Predict using the class method
+            prediction = self.predict(sample)
+            
+            # 2. Determine Truth (Simplified for this exercise)
+            # Truth is 'setosa' if the species is 'setosa'
+            truth = "setosa" if sample["species"] == "setosa" else "not_setosa"
+            
+            # 3. Score
+            if prediction == truth:
+                correct += 1
+            total += 1
+            
+        return correct / total if total > 0 else 0.0
+\end{minted}
+
+\noindent
+\textbf{Before you code (reasoning):}
+\begin{itemize}\setlength{\itemsep}{2pt}
+    \item The evaluation loop should not re-implement prediction logic. It should call \texttt{self.predict(sample)}.
+    \item The method should keep counting logic local (\texttt{correct}, \texttt{total}).
+    \item The method should return one clear metric (accuracy), so it is easy to compare classifiers.
+\end{itemize}
+
+\noindent
+\textbf{After you code (verification):}
+\begin{itemize}\setlength{\itemsep}{2pt}
+    \item Accuracy is a number between 0.0 and 1.0.
+    \item If you change the object's threshold, accuracy can change without modifying the evaluation code.
+    \item If the dataset is empty, you should not crash (avoid division by zero).
+\end{itemize}
+
+\noindent
+\textbf{Common beginner pitfall:} forgetting to increment \texttt{total} for every sample, even wrong ones.
+
+
+\section{Still not sure the best section name for this}
+
+
+\subsection{Step 4: Putting it all together (Main Script)}
+Now you can use your class to define a small dataset and test different classifiers easily.
+The workflow becomes:
+\begin{enumerate}
+    \item Create a dataset (list of dictionaries).
+    \item Create one or more classifier objects (each with its own threshold).
+    \item Ask each object to evaluate itself on the dataset.
+\end{enumerate}
+
+\begin{minted}[fontsize=\small, linenos]{python}
+# 1. Define dataset (a small test set)
+dataset = [
+    {"petal_length": 1.4, "species": "setosa"},
+    {"petal_length": 1.5, "species": "setosa"},
+    {"petal_length": 4.5, "species": "versicolor"},
+    {"petal_length": 6.0, "species": "virginica"},
+]
+
+# 2. Create Objects with different configurations
+clf_strict = IrisRuleClassifier(threshold=1.5)   # Strict threshold
+clf_loose  = IrisRuleClassifier(threshold=2.5)   # Loose threshold
+
+# 3. Evaluate each one
+print("Strict Classifier Accuracy:", clf_strict.evaluate(dataset))
+print("Loose Classifier Accuracy: ", clf_loose.evaluate(dataset))
+\end{minted}
+\noindent
+\textbf{What to notice:} the dataset is passed in, but the threshold is not.
+The threshold lives inside each object.
+
+\section{Why is this better than session 5?}
+In session 5, if we wanted 2 different thresholds, we had to manage 2 different \texttt{settings} dictionaries and ensure we passed the correct one to every function call.
+In session 6, each object \textbf{remembers its own settings}.
+We simply ask the object to \texttt{evaluate(dataset)}.
+
+\noindent
+This design scales better because:
+\begin{itemize}\setlength{\itemsep}{2pt}
+    \item You can create many objects with different configurations and compare them cleanly.
+    \item You reduce the number of parameters passed around between functions.
+    \item You get a natural place to store state and behavior together, which prepares you for Session 7 (where you will create multiple classifier types).
+\end{itemize}
+
+\section{Submission Requirement}
+Add your student label at the end:
+\begin{minted}[fontsize=\small, linenos]{python}
+print("=== Student Label ===")
+print("ID: ...")
+\end{minted}
+Run the script and verify strict vs.\ loose accuracy scores are printed.
+\noindent
+\textbf{Minimum check:} your output should show at least two different accuracy numbers when you change thresholds, proving that the object stores configuration correctly.
+
