@@ -77,12 +77,62 @@ Although optional, it is highly recommended that your group includes summaries o
     \item Include a table with three columns: customer statements, interpreted needs, and themes (typical use, likes, dislikes, or suggested improvements), as shown in Figure \ref{fig:myimage}.
 \end{enumerate}
 
-\begin{figure}[h!] 
-  \centering
-  \includegraphics[width=0.8\textwidth]{images/need_interpretation.png}
-  \caption{An example of the customer needs interpretation table.}
-  \label{fig:myimage}
-\end{figure}
+% \begin{figure}[h!] 
+%   \centering
+%   \includegraphics[width=0.8\textwidth]{images/need_interpretation.png}
+%   \caption{An example of the customer needs interpretation table.}
+%   \label{fig:myimage}
+% \end{figure}
+
+\begin{table}[htbp]
+\centering
+\small
+\renewcommand{\arraystretch}{1.2}
+\caption{Example of translating customer statements into interpreted needs}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}p{0.22\textwidth}|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|}
+\hline
+\textbf{Question/Prompt} & \textbf{Customer Statement} & \textbf{Interpreted Need} \\
+\hline
+
+\multirow[t]{2}{0.22\textwidth}{Typical uses}
+& I have to manually turn it on and off when it gets too hot or cold.
+& The thermostat maintains a comfortable temperature without requiring user action. \\
+\cline{2-3}
+& Each time I want to change the temperature, I need to adjust both thermostats in the house.
+& Any user inputs need not be made in multiple locations. \\
+\hline
+
+\multirow[t]{2}{0.22\textwidth}{Likes---current model}
+& I like that I can change the temperature if the setting is too high.
+& The temperature setting is easy to control manually. \\
+\cline{2-3}
+& It didn't cost a fortune.
+& The thermostat is affordable to purchase. \\
+\hline
+
+\multirow[t]{3}{0.22\textwidth}{Dislikes---current model}
+& I'm too lazy to learn how to figure it out.
+& The thermostat requires little or no user instruction or learning. \\
+\cline{2-3}
+& I sometimes forget to turn it off when we leave the house.
+& The thermostat saves energy when no one is home. \\
+\cline{2-3}
+& Sometimes the buttons don't register a push and I have to press it repeatedly.
+& The thermostat definitively registers any user inputs. \\
+\hline
+
+\multirow[t]{2}{0.22\textwidth}{Suggested improvements}
+& I would like my iPhone to adjust my thermostat.
+& The thermostat can be controlled remotely without requiring a special device. \\
+\cline{2-3}
+& I like to shift quickly between different options like energy saving or ultra comfort.
+& The thermostat responds immediately to differences in occupant preferences. \\
+\hline
+
+\end{tabularx}
+\label{tab:customer-needs}
+\end{table}
+
 
 Optionally, you may add an additional column indicating the type of interpreted need (direct, latent, constant, variable, general, niche).
 
@@ -117,19 +167,21 @@ Expected outputs:
     \end{tabular}
 \end{table}
 
-\begin{figure}[h!] 
-  \centering
-  \includegraphics[width=0.8\textwidth]{images/need_metric_matrix.png}
-  \caption{Needs-metric matrix.}
-  \label{fig:needmetric}
-\end{figure}
+\input{session8/need_metric_pair}
+% \begin{figure}[h!] 
+%   \centering
+%   \includegraphics[width=0.8\textwidth]{images/need_metric_matrix.png}
+%   \caption{Needs-metric matrix.}
+%   \label{fig:needmetric}
+% \end{figure}
 
-\begin{figure}[h!] 
-  \centering
-  \includegraphics[width=0.8\textwidth]{images/competitive_metric_table.png}
-  \caption{Competitive metrics table.}
-  \label{fig:competitivemetric}
-\end{figure}
+% \begin{figure}[h!] 
+%   \centering
+%   \includegraphics[width=0.8\textwidth]{images/competitive_metric_table.png}
+%   \caption{Competitive metrics table.}
+%   \label{fig:competitivemetric}
+% \end{figure}
+\input{session8/comparison_suspension_metric_bicycle.tex}
 
 \begin{figure}[h!] 
   \centering

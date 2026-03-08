@@ -9,7 +9,7 @@
 \RequirePackage{xcolor}
 \definecolor{chapter}{rgb}{0.2, 0.25, 0.4}
 \definecolor{section}{rgb}{0.2, 0.45, 0.3}
-\definecolor{cover}{RGB}{145, 0, 140}
+\definecolor{cover}{RGB}{0, 120, 60}
 \definecolor{background}{rgb}{1.0, 0.99, 0.95}
 
 % IPA support
@@ -79,7 +79,7 @@
 \RequirePackage{anyfontsize}
 \RequirePackage{graphicx}
 \newcommand{\HUGE}{\fontsize{50}{60}}
-\newcommand{\thesubtitle}{I forgot to put in a subtitle.}
+\newcommand{\thesubtitle}{2025/2026}
 \newcommand{\subtitle}[1]{\renewcommand{\thesubtitle}{#1}}
 \renewcommand{\maketitle}{{\bfseries
     \thispagestyle{empty}
@@ -88,7 +88,7 @@
         \vspace{0.5cm}
         {\Large\emph{\thesubtitle}} \\
         \vspace{1cm}
-        \includegraphics[width=\textwidth]{images/cover.png}
+        % \includegraphics[width=\textwidth]{images/cover.png}
         \pagecolor{cover}
         \vfill
         \theauthor
