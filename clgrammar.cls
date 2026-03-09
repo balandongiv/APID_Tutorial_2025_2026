@@ -44,28 +44,54 @@
 ]{hyperref}
 
 % Fancy formatting
+% \RequirePackage{fancyhdr}
+% \RequirePackage{titling}
+% \RequirePackage{geometry}
+% \pagestyle{fancy}
+% \fancyhf{}
+% \fancyhead[LE,RO]{\leftmark}
+% \fancyhead[RE,LO]{\rightmark}
+% \fancyfoot[LE,RO]{\thetitle}
+% \fancyfoot[RE,LO]{\theauthor}
+% \fancyhead[CE,CO]{\thepage}
+% \fancyfoot[CE,CO]{\thepage}
+% \AtBeginDocument{
+%     \setlength{\oddsidemargin}{2mm}
+%     \setlength{\evensidemargin}{2mm}
+% %    \setlength{\marginpar}{0pt}
+% %    \setlength{\marginparpush}{0pt}
+%     \setlength{\hoffset}{0pt}
+%     \setlength{\parskip}{4pt}
+%     \renewcommand{\headrulewidth}{1pt}
+%     \renewcommand{\footrulewidth}{1pt}
+% }
 \RequirePackage{fancyhdr}
-\RequirePackage{titling}
 \RequirePackage{geometry}
+\RequirePackage{titling}
+
 \pagestyle{fancy}
 \fancyhf{}
-\fancyhead[LE,RO]{\leftmark}
-\fancyhead[RE,LO]{\rightmark}
-\fancyfoot[LE,RO]{\thetitle}
-\fancyfoot[RE,LO]{\theauthor}
-\fancyhead[CE,CO]{\thepage}
-\fancyfoot[CE,CO]{\thepage}
+
 \AtBeginDocument{
     \setlength{\oddsidemargin}{2mm}
     \setlength{\evensidemargin}{2mm}
-%    \setlength{\marginpar}{0pt}
-%    \setlength{\marginparpush}{0pt}
     \setlength{\hoffset}{0pt}
     \setlength{\parskip}{4pt}
+    \setlength{\headheight}{15pt}
     \renewcommand{\headrulewidth}{1pt}
     \renewcommand{\footrulewidth}{1pt}
 }
 
+\renewcommand{\chaptermark}[1]{%
+  \markboth{Chapter \thechapter.\ #1}{}}
+\renewcommand{\sectionmark}[1]{%
+  \markright{\thesection\ #1}}
+
+\fancyhead[LE]{\nouppercase{\leftmark}}
+\fancyhead[RO]{\nouppercase{\rightmark}}
+\fancyfoot[C]{\thepage}
+\fancyfoot[LE,RO]{\thetitle}
+\fancyfoot[RE,LO]{\theauthor}
 % Better section titles
 \RequirePackage{titlesec}
 \titleformat{\chapter}[frame]{\Huge\bfseries}
