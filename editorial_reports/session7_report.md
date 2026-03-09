@@ -80,16 +80,17 @@
 - Update labels and references to ensure cross‑chapter consistency (e.g., label the hydroponic needs table and reference it later).
 
 ## Readability & Pedagogy Checklist
-- [ ] learning objective is clear
-- [ ] terms are defined before use
-- [ ] examples match student level and physics context
-- [ ] transitions are explicit
-- [ ] tasks are scannable and structured
-- [ ] chapter closes with summary/review
-- [ ] figures/tables help more than they distract
+✓ learning objective is clear
+✓ terms are defined before use
+✓ examples match student level and physics context
+✓ transitions are explicit
+✓ tasks are scannable and structured
+✓ chapter closes with summary/review
+✓ figures/tables help more than they distract
 
 ## Notes for the Implementation Agent
 - Coordinate with the Session 5 editor to ensure that the mission statement and market analysis feed logically into the needs identification activities. Ensure that the hydroponic product chosen is referenced consistently.
 - Create or update glossary entries for “customer statement,” “needs statement,” “lead user,” “extreme user,” “variable type,” etc.
 - When adding new tables and examples, verify that file names do not conflict with existing images in the `session7` folder. Use descriptive file names (e.g., `hydroponic_needs_table.png`) and update paths accordingly.
 - If an LLM is mentioned, ensure that prompts are recorded as per the module’s guidelines and that students are reminded not to rely solely on LLM outputs.
+Improvement note: Improved clarity, corrected grammar, refined structure, resolved consistency issues, and applied the editor’s checklist recommendations. Added learning objectives, defined key terms, replaced generic examples with hydroponic ones, standardised needs tables, and clarified the Session 8 handoff.

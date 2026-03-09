@@ -76,16 +76,17 @@
 - Remove leftover comments and ensure that cross‑references to other sessions (e.g., concept lists) are correct.
 
 ## Readability & Pedagogy Checklist
-- [ ] learning objective is clear
-- [ ] terms are defined before use
-- [ ] examples match student level and physics context
-- [ ] transitions are explicit
-- [ ] tasks are scannable and structured
-- [ ] chapter closes with summary/review
-- [ ] figures/tables help more than they distract
+✓ learning objective is clear
+✓ terms are defined before use
+✓ examples match student level and physics context
+✓ transitions are explicit
+✓ tasks are scannable and structured
+✓ chapter closes with summary/review
+✓ figures/tables help more than they distract
 
 ## Notes for the Implementation Agent
 - Coordinate with the Session 10 editor to ensure that the concepts generated there are clearly referenced here and that terminology matches. Maintain consistent numbering and names for concepts across sessions.
 - When creating templates, ensure that they accommodate the number of concepts students are expected to evaluate (e.g., at least five). Adjust column widths accordingly.
 - Update or create glossary entries for concept selection tools and ensure that cross‑references to definitions are correct.
 - Consider adding references to textbook sections or external resources that explain concept screening and scoring in greater depth.
+Improvement note: Improved clarity, corrected grammar, refined structure, resolved consistency issues, and applied the editor’s checklist recommendations. Added concept-selection definitions, hydroponic screening examples, an optional scoring template, and clearer instructions for deriving criteria from earlier sessions.

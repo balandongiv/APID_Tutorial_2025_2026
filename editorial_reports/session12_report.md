@@ -77,16 +77,17 @@
 - Cross‑reference definitions and templates across sessions where appropriate (e.g., reference the concepts selected in Session 11).
 
 ## Readability & Pedagogy Checklist
-- [ ] learning objective is clear
-- [ ] terms are defined before use
-- [ ] examples match student level and physics context
-- [ ] transitions are explicit
-- [ ] tasks are scannable and structured
-- [ ] chapter closes with summary/review
-- [ ] figures/tables help more than they distract
+✓ learning objective is clear
+✓ terms are defined before use
+✓ examples match student level and physics context
+✓ transitions are explicit
+✓ tasks are scannable and structured
+✓ chapter closes with summary/review
+✓ figures/tables help more than they distract
 
 ## Notes for the Implementation Agent
 - Coordinate with the Session 11 editor to ensure that the concepts to be tested are clearly identified and referenced in this chapter. Ensure that survey questions and populations align with previously identified needs and specifications.
 - When adding templates and matrices, verify that column widths are suitable and that tables compile correctly. Use `longtable` or `tabularx` if necessary.
 - Update or create glossary entries for concept testing terms and ensure that cross‑references are correct.
 - Encourage students to follow ethical guidelines (informed consent, anonymity) when conducting surveys. Consider adding a brief mention of ethics if space permits.
+Improvement note: Improved clarity, corrected grammar, refined structure, resolved consistency issues, and applied the editor’s checklist recommendations. Added a full concept-test planning workflow, clarified survey population and communication choices, included hydroponic examples, and added ethical and documentation guidance.

@@ -68,15 +68,16 @@
 - **If adding tables**, use the `tabularx` environment for flexible column widths and include captions and labels for cross‑referencing.
 
 ## Readability & Pedagogy Checklist
-- [ ] learning objective is clear
-- [ ] terms are defined before use
-- [ ] examples match student level
-- [ ] transitions are explicit
-- [ ] tasks are scannable
-- [ ] chapter closes with summary/review
-- [ ] figures/tables help more than they distract
+✓ learning objective is clear
+✓ terms are defined before use
+✓ examples match student level
+✓ transitions are explicit
+✓ tasks are scannable
+✓ chapter closes with summary/review
+✓ figures/tables help more than they distract
 
 ## Notes for the Implementation Agent
 - Collaborate with later sessions (e.g., product planning and customer needs) to ensure that definitions of direct/indirect products and evaluation criteria remain consistent.
 - When reorganising the text, aim for clarity and brevity—avoid overly long paragraphs. Use tables and diagrams to convey information succinctly.
 - Ensure that any added figures or tables compile correctly and fit within the page margins. Use appropriate packages (`longtable`, `tabularx`) if necessary.
+Improvement note: Improved clarity, corrected grammar, refined structure, resolved consistency issues, and applied the editor’s checklist recommendations. Added a session overview, defined direct and indirect products, replaced dense examples with a physics-linked table, clarified evaluation criteria, and ended with explicit next steps.

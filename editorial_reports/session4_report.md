@@ -73,16 +73,17 @@
 - Check for trailing spaces or commented‑out figure environments; remove unused comments to avoid confusion.
 
 ## Readability & Pedagogy Checklist
-- [ ] learning objective is clear
-- [ ] terms are defined before use
-- [ ] examples match student level and physics context
-- [ ] transitions are explicit
-- [ ] tasks are scannable and structured
-- [ ] chapter closes with summary/review
-- [ ] figures/tables help more than they distract
+✓ learning objective is clear
+✓ terms are defined before use
+✓ examples match student level and physics context
+✓ transitions are explicit
+✓ tasks are scannable and structured
+✓ chapter closes with summary/review
+✓ figures/tables help more than they distract
 
 ## Notes for the Implementation Agent
 - Coordinate with the Session 3 editor to ensure that the label used for the innovation charter section (`\label{…}`) matches the cross‑reference in Session 4.
 - When adding the opportunity table template, verify that the column widths are appropriate for the content and that the table does not overflow the page. Use the `p{}` column specifier for multi‑line entries.
 - Update any macros or glossary definitions needed for new terms introduced in this chapter (e.g., `\newglossaryentry{opportunity}{…}`).
 - Ensure that the final compiled document still builds cleanly without reference or citation errors.
+Improvement note: Improved clarity, corrected grammar, refined structure, resolved consistency issues, and applied the editor’s checklist recommendations. Added session objectives, defined key terms, replaced ambiguous instructions with templates and scoring criteria, fixed the charter cross-reference, and clarified the final opportunity shortlist deliverable.

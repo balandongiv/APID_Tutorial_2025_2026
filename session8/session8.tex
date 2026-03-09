@@ -1,150 +1,131 @@
-
 \chapter{Product Specifications}
-In last session's tutorial, we translated customer statements into customer needs. In this session, we will continue working with these needs, aiming to transform them into measurable metrics that the Product Development (PD) team can utilize effectively.
 
-\subsection{In-class Activities}
+\section{Session Overview}
 
-\subsubsection{Activity 1: Create a needs and importance Table}
-First, please prepare a table with columns labelled Number, Sub-component, Needs, and Importance. Below is an example of how the table might look as shown in Table \ref{tab:suspension_needs}:
+In Session 7, your group translated customer statements into interpreted needs. This session turns those needs into \textbf{product specifications}: measurable targets that guide engineering decisions, benchmarking, and later concept evaluation.
 
-\begin{table}[h]
-    \centering
-    \caption{Suspension system needs and importance}
-    \label{tab:suspension_needs}
-    \begin{tabular}{|c|c|c|c|}
-        \hline
-        No & Sub-component & Need & Imp. \\ \hline
-        1 & The suspension & Reduces vibration to the hands. & 3 \\ \hline
-        2 & The suspension & Allows easy traversal of slow, difficult terrain. & 2 \\ \hline
-    \end{tabular}
+By the end of this session, you should be able to:
+\begin{enumerate}
+    \item assign relative importance to customer needs;
+    \item define measurable metrics and units for those needs;
+    \item evaluate candidate metrics using clear specification guidelines; and
+    \item build a basic benchmark of competing or reference products.
+\end{enumerate}
+
+\section{Key Terms}
+
+\begin{itemize}
+    \item \textbf{Need}: a user-centred requirement identified in Session 7.
+    \item \textbf{Metric}: a measurable quantity used to judge how well the product satisfies a need.
+    \item \textbf{Unit}: the measurement scale attached to a metric, such as L/min, mg/L, s, or RM.
+    \item \textbf{Benchmarking}: comparing your metrics with competing or reference products to understand realistic targets.
+\end{itemize}
+
+\section{Why Specifications Matter}
+
+Specifications connect customer language to engineering decisions. If a customer says that nutrient monitoring should be easier, the team must decide what can actually be measured: response time, display readability, sensor accuracy, or refill warning threshold. Without measurable specifications, concept selection becomes subjective and difficult to justify.
+
+\section{Activity 1: Prioritise Needs}
+
+Start by assigning an importance score to each major need from Session 7. Use a 1--5 scale where 1 means low importance and 5 means very high importance.
+
+When choosing the score, consider:
+\begin{itemize}
+    \item how frequently the need appeared in customer feedback;
+    \item how strongly it affects usability, safety, or performance; and
+    \item whether the need is central to the mission statement and target market.
+\end{itemize}
+
+\begin{table}[htbp]
+\centering
+\caption{Needs-importance table for the selected hydroponic product}
+\label{tab:session8-needs-importance}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabularx}{\textwidth}{|c|>{\raggedright\arraybackslash}p{0.2\textwidth}|>{\raggedright\arraybackslash}X|c|>{\raggedright\arraybackslash}p{0.2\textwidth}|}
+\hline
+\textbf{No.} & \textbf{Sub-component} & \textbf{Need} & \textbf{Importance (1--5)} & \textbf{Reason for score} \\
+\hline
+1 & Nutrient reservoir & Nutrient level is easy to monitor & 5 & Strong impact on usability and maintenance \\
+\hline
+2 & Flow system & Nutrient flow remains stable & 5 & Directly affects plant health and system reliability \\
+\hline
+3 & Housing or frame & Product is easy to clean & 4 & Strong effect on maintenance effort \\
+\hline
+\end{tabularx}
 \end{table}
 
-\noindent
-You should list the sub-components that your group has identified from analyzing customer needs. Also, for each need you identify, assign an importance level on a scale from 1 to 5, where 1 means less important and 5 means very important.
+\section{Activity 2: Define Candidate Metrics}
 
-\subsubsection{Activity 2: Defining Metrics for Smooth Product Functionality} % if available
-Now, let's find the appropriate metrics for each of the customer needs. Due to time constraints, we will use the LLM (language learning model) to assist us. Remember, this course is not focused on prompt engineering or LLM, but we are using it here to save time. You might consider using the following prompt: \href{https://gist.github.com/balandongiv/b63414ea1f72e311bfdd2f1bdc5468dd}{click me}.
+For each important need, propose one or more metrics that a product development team could measure directly. You may use an LLM to generate ideas, but treat the output as a draft only. Every metric must still be checked using engineering judgement, credible sources, and the logic of the project.
 
+\subsection{Metric Selection Guidelines}
 
-The LLM may produce different results depending on the trial and which service (ChatGPT, Gemini, Claude, etc) you used. It is important for you to assess the accuracy and appropriateness of these results. Then, map the output in the Table \ref{table:bicycle_need_metric_unit_justification} according to your evaluation.
+A useful metric should:
+\begin{itemize}
+    \item reflect the customer need clearly;
+    \item be measurable with a realistic method;
+    \item leave enough design freedom rather than locking the team into one fixed solution;
+    \item use appropriate units; and
+    \item support later comparison with other products if possible.
+\end{itemize}
 
+Table~\ref{tab:session8-metric-definition} gives a recommended format.
 
-
-\begin{landscape}
-\begin{footnotesize}
-\begin{longtable}{|c|p{4cm}|p{5cm}|c|p{6.5cm}|}
-\caption{Bicycle Suspension Needs, Metrics, Units, and Justification} \label{table:bicycle_need_metric_unit_justification} \\
+\begin{table}[htbp]
+\centering
+\caption{Hydroponic example of needs, metrics, units, and justification}
+\label{tab:session8-metric-definition}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabularx}{\textwidth}{|c|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}p{0.22\textwidth}|>{\raggedright\arraybackslash}p{0.1\textwidth}|>{\raggedright\arraybackslash}X|}
 \hline
-\textbf{No} & \textbf{Need} & \textbf{Metric} & \textbf{Units} & \textbf{Justification} \\
+\textbf{No.} & \textbf{Need} & \textbf{Metric} & \textbf{Unit} & \textbf{Justification} \\
 \hline
-\endfirsthead
+1 & Nutrient level is easy to monitor & Reservoir level reading error & mm & Directly measures how accurately the system reports remaining nutrient level. \\
+\hline
+2 & Nutrient flow remains stable & Flow-rate variation during operation & L/min & Indicates whether the delivery system performs consistently. \\
+\hline
+3 & Product is easy to clean & Average cleaning time for one maintenance cycle & min & Reflects maintenance burden experienced by the user. \\
+\hline
+\end{tabularx}
+\end{table}
 
-\multicolumn{5}{c}%
-{\tablename\ \thetable\ -- \textit{Continued from previous page}} \\
-\hline
-\textbf{No} & \textbf{Need} & \textbf{Metric} & \textbf{Units} & \textbf{Justification} \\
-\hline
-\endhead
+\section{Activity 3: Evaluate Metrics Using Specification Guidelines}
 
-\hline \multicolumn{5}{r}{\textit{Continued on next page}} \\
-\endfoot
+Each candidate metric should be checked against the five guideline categories below.
 
-\hline
-\endlastfoot
-
-\multirow{3}{*}{1} 
-  & \multirow{3}{4.5cm}{Reduces vibration to the hands} 
-    & 1. Attenuation from dropout to handlebar at 10\,Hz & dB & High-frequency vibrations are most noticeable at the hands; reduction improves rider comfort. \\
-\cline{3-5}
-  & & 2. Maximum value from the Monster & g & Captures peak impact events to evaluate suspension performance. \\
-\cline{3-5}
-  & & 3. Minimum descent time on test track & s & Demonstrates performance under real trail conditions. \\
-\hline
-2 & Allows easy traversal of slow, difficult terrain 
-  & 1. Spring preload & N & Adjustability of preload helps with traction and control on rough, slow trails. \\
-\hline
-\multirow{3}{*}{3} 
-  & \multirow{3}{4.5cm}{Enables high-speed descents on bumpy trails} 
-    & 1. Attenuation from dropout to handlebar at 10\,Hz & dB & Reducing vibration at high speeds helps maintain control and comfort. \\
-\cline{3-5}
-  & & 2. Maximum value from the Monster & g & Measures extreme shock loads during descents. \\
-\cline{3-5}
-  & & 3. Minimum descent time on test track & s & Indicates efficiency and capability over fast, bumpy terrain. \\
-\hline
-4 & Allows sensitivity adjustment 
-  & 1. Damping coefficient adjustment range & N$\cdot$s/m & Provides tunability for rider preference and terrain type. \\
-\hline
-5 & Preserves the steering characteristics of the bike 
-  & 1. Maximum travel (26-in. wheel) & mm & Excessive suspension travel can affect geometry and handling. \\
-\hline
-\multirow{2}{*}{6} 
-  & \multirow{2}{4.5cm}{Remains rigid during hard cornering} 
-    & 1. Spring preload & N & A stiffer spring resists compression and maintains geometry. \\
-\cline{3-5}
-  & & 2. Lateral stiffness at the tip & kN/m & Prevents lateral flexing which would impair handling under load. \\
-\hline
-7 & Is lightweight 
-  & 1. Total mass & kg & Lower mass improves bike efficiency and handling. \\
-\hline
-8 & Provides stiff mounting points for the brakes 
-  & 1. Lateral stiffness at brake pivots & kN/m & Ensures braking forces do not deform the frame and affect control. \\
-\hline
-
-\end{longtable}
-\end{footnotesize}
-\end{landscape}
-
-
-Just to make life interesting, you could modify the prompt to generate 'Subjective Metrics for Subjective Needs'.
-
-\subsubsection{Activity 3: Defining Metrics for Smooth Product Functionality} % if available
-As I often remind you, do not fully trust everything that the LLM produces. According to the textbook, we should follow certain guidelines when creating product specifications. Therefore, please add a new column to your table and check if any suggestions meet the following criteria:
-\FloatBarrier
 \begin{enumerate}
-    \item Metrics that Reflect Customer Needs.
-    \item Dependent Metrics for Design Freedom
-    \item Practical Metrics for Product Development
-    \item Subjective Metrics for Subjective Needs
-    \item Metrics for Market Comparison
+    \item \textbf{Metrics that reflect customer needs}: the metric measures something directly connected to the user's need.
+    \item \textbf{Dependent metrics for design freedom}: avoid too many tightly dependent metrics that overconstrain the design.
+    \item \textbf{Practical metrics for product development}: the metric can be measured, tested, or estimated realistically.
+    \item \textbf{Subjective metrics for subjective needs}: if the need is subjective, use an appropriate rating or user-based measure.
+    \item \textbf{Metrics for market comparison}: the metric is useful for comparing reference or competitor products.
 \end{enumerate}
-\FloatBarrier
-Evaluate whether the response from the LLM fully or partially meets any of these guidelines. In the new column, mark the numbers 1, 2, 3, 4, or 5 to indicate which guideline(s) each suggestion aligns with.
 
-\subsubsection{Activity 4: Translate into need-metric matrix (Optional)} % if available
-This is an optional task that you can choose to do at home. Next, using Microsoft Excel, you will need to rearrange the table from Activity 3 into a new format called a 'need-metric matrix'. Your matrix should look similar to the example provided in Table \ref{table: need to metric pair}
+Add a guideline column to your metric table and note which of the five categories each candidate metric satisfies. If you use more than one category, list all relevant numbers or names.
 
+\section{Activity 4: Build the Need-Metric Matrix (Optional)}
 
+The need-metric matrix shows whether the chosen metrics cover the important needs. This is useful for checking whether any major need has been forgotten or whether several metrics are measuring the same issue.
 
 \input{session8/need_metric_pair}
 
-\subsubsection{Activity 5: Collect Competitive Benchmarking Information} % if available
-Next, we will assess the metric values used by various competing companies. You may create a table similar to the following Table \ref{table:metric comparison} with columns representing each competitor's product. For this table, each row should correspond to a metric we identified earlier.
+\section{Activity 5: Collect Benchmarking Information}
 
-
+Benchmarking helps your group understand what performance levels already exist in the market. Use competitor datasheets, product listings, academic sources, or carefully verified online references where possible. If an LLM suggests values, treat them as unverified until you confirm them.
 
 \input{session8/comparison_suspension_metric_bicycle.tex}
 
+\section{Activity 6: Visualise and Interpret the Data (Optional)}
 
-% \end{landscape}
-Next, we will Input the metric values for each competitor's product in the respective columns. In actual product development process, these values should be extracted from competitors' catalogs and supporting literature. However, due to time constraints, we will once again use the Language Learning Model (LLM) to help us define the appropriate specifications for each customer need. It's important to remember that this class does not focus on prompt engineering or the mechanics of LLMs; however, we utilize this tool to efficiently manage our time.
+If you choose to visualise the benchmark data, use bar charts, grouped bar charts, or radar charts to compare competing values. Excel, Python, or another charting tool is usually more reliable than direct LLM image generation.
 
+When interpreting a graph, ask:
+\begin{itemize}
+    \item Which metrics show the widest performance gap across products?
+    \item Where does your concept need to meet the market baseline, and where could it differentiate itself?
+    \item Do any metrics appear unrealistic or poorly supported by evidence?
+\end{itemize}
 
-You might consider using the following prompt to engage the LLM: \href{https://gist.github.com/balandongiv/1c360c0ab5658f611c870ea06b4aabcc}{clickme}.  The LLM is expected to generate outputs in various formats depending on the trial and platform used. You must critically evaluate the accuracy and appropriateness of these outputs using your judgment, then document these metrics in the table as instructed.
+\section{Summary and Next Steps}
 
-
-\subsubsection{Activity 6: Collect Competitive Benchmarking Information} % if available
-
-For better visualization, we can represent these values using graphs. This helps us to clearly see the range of metric values across different competitive products. 
-
-You may consider the following prompt \href{https://gist.github.com/balandongiv/3f06a6bdbf30c20dbcfd6877a46c8373}{click me} to generate a bar chart to display the values adopted by various competitors for a specific metric. Alternatively, you can generate a grouped bar chart \href{https://gist.github.com/balandongiv/dc9635a4feaf42694f8f5054b10f13cf}{click me} to show the values adopted by various competitors across a range of metrics related to the product.
-If you are using the free version of ChatGPT, it might provide you with Python code instead of a direct graph. You can either:
-
-
-
-\begin{enumerate}
-    \item Ask a friend who has taken a computer programming class to run the code and share the results with you.
-    \item Use  \href{https://www.codabrainy.com/en/python-compiler/}{codabrainy} or \href{https://trinket.io/embed/python3}{} (trinke), which does not require any installation, to run the code yourself.
-\end{enumerate}
-
-This exercise is intended to help you understand how to visually compare different values used by competing products. Remember, the image created by the LLM might not always be accurate, so it is important to verify the output yourself. You can also use Microsoft Excel to create these graphs for more precise results.
-
+At the end of this session, your group should have a needs-importance table, a candidate metric table with units and justifications, and an initial benchmark or reference comparison. These outputs will guide functional decomposition and concept generation in the next sessions.

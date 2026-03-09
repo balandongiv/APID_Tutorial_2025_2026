@@ -1,111 +1,177 @@
-\chapter{Stage Gate}
-% this is some introduction about the topic
-\subsection{Pre-class Activities}
-\subsubsection{Activity 1: Selecting product development process}
-\textbf{Objective:} \\
-The objective of this activity is to help you in understanding different types of product development processes and subsequently adapt and tailor the development process according to your chosen project.
+\chapter{Stage-Gate and Development Strategy}
+
+\section{Session Overview}
+
+This session asks your group to decide how the project should be managed before detailed design work begins. In practice, a product team does not only choose \emph{what} to develop; it also decides \emph{how} the work will be organised, reviewed, and coordinated. These choices affect risk, speed, communication, and the quality of later design decisions.
+
+By the end of this session, your group should be able to:
 \begin{enumerate}
-    \item Study and become familiar with various types of product development processes, such as:
-    \begin{itemize}
-        \item Technology-push products
-        \item Platform products
-        \item Process-intensive products.
-        \item Customized products
-        \item High-risk products
-        \item Quick-build products
-        \item Product-service systems
-        \item Complex systems
-    \end{itemize}
-    \item Determine which development process closely aligns with your team's chosen product.
-    \begin{enumerate}
-        \item You should consider the characteristics and requirements of your product and compare them with the information presented in Exhibit 2-4.
-        \item This analysis will help you identify the most suitable development process for your project.
-    \end{enumerate}
+    \item identify a suitable product development process for your hydroponics project;
+    \item select a development process flow that matches the project's complexity and uncertainty;
+    \item distinguish between departmental structure and organisational structure; and
+    \item justify a recommended team structure for the project.
 \end{enumerate}
 
-\subsubsection{Activity 2: Selecting Product Development Process Flows} % if available
-\textbf{Objective:} \\
-The objective of this activity is to guide you in understanding different types of Development Process Flows (DPS) and subsequently help in selecting DPS that most suitable one for your team's needs in developing the selected product. By understanding these process flows will enable you to effectively plan and execute the product development process.
+\section{Why a Stage-Gate Approach Matters}
+
+A \textbf{stage-gate process} breaks product development into major stages separated by review points, or \emph{gates}. At each gate, the team checks whether the project should continue, be revised, or stop. This approach is useful because it forces teams to review evidence before moving forward.
+
+For APID, the stage-gate mindset helps your group do three things:
+\begin{itemize}
+    \item confirm that the chosen opportunity still fits user needs and project goals;
+    \item identify technical or market risks early; and
+    \item coordinate decisions across engineering, design, communication, and planning tasks.
+\end{itemize}
+
+\section{Key Terms}
+
+This section separates terms that are often confused.
+
+\begin{itemize}
+    \item \textbf{Product development process}: the overall type of development strategy, such as market-pull or technology-push.
+    \item \textbf{Development process flow}: the sequence pattern used to execute the work, such as a generic linear flow or a spiral cycle.
+    \item \textbf{Departmental structure}: the functions that must contribute to the work, such as marketing, engineering, manufacturing, or quality.
+    \item \textbf{Organisational structure}: how authority and responsibility are arranged, such as a functional team, project team, lightweight structure, or heavyweight structure.
+\end{itemize}
+
+\section{Development Process Types}
+
+Table~\ref{tab:session2-process-types} summarises common process types and shows how they may relate to hydroponic products.
+
+\begin{table}[htbp]
+\centering
+\caption{Summary of common product development process types}
+\label{tab:session2-process-types}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}p{0.2\textwidth}|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}p{0.25\textwidth}|}
+\hline
+\textbf{Process type} & \textbf{When it fits} & \textbf{Hydroponics-related example} \\
+\hline
+Generic or market-pull & Starts from a clear user need and then selects technology to meet it. & A grower-facing cleaning tool developed to solve a maintenance problem reported by users. \\
+\hline
+Technology-push & Starts from a new technology and then looks for a valuable application. & A new low-cost sensor package adapted for nutrient monitoring. \\
+\hline
+Platform & Builds a new product around an existing subsystem or architecture. & A modular rack system designed around an existing pump-and-channel platform. \\
+\hline
+Process-intensive & Product characteristics are strongly shaped by the production or operating process. & A nutrient-mixing product whose performance depends on controlled dosing and mixing behaviour. \\
+\hline
+Customized & Creates tailored variations from a known product family. & A hydroponic support frame adapted to different farm or balcony layouts. \\
+\hline
+High-risk & Involves significant market or technical uncertainty and requires early testing. & A novel automated dosing system with uncertain reliability in real growing conditions. \\
+\hline
+Quick-build & Uses repeated build-test cycles to refine the concept rapidly. & A low-cost prototype enclosure or fixture refined through repeated physical iteration. \\
+\hline
+Product-service system & Combines a physical product with a supporting service or workflow. & A monitoring kit bundled with maintenance guidance and data reporting. \\
+\hline
+Complex system & Requires several interacting subsystems to work together reliably. & A controlled hydroponic unit integrating sensing, pumping, structure, and user interface. \\
+\hline
+\end{tabularx}
+\end{table}
+
+When your group chooses a process type, focus on the product's dominant challenge. For example, if the main uncertainty is a novel sensor technology, a technology-push or high-risk framing may fit better than a generic market-pull process.
+
+\section{Development Process Flows}
+
+After selecting the broad process type, choose the flow that best suits the project execution.
+
+\begin{itemize}
+    \item \textbf{Generic flow}: a mostly sequential path from planning to concept development, design, testing, and refinement. This works well for low-to-moderate uncertainty.
+    \item \textbf{Spiral flow}: repeated cycles of planning, prototyping, review, and revision. This is useful when technical learning must happen through iteration.
+    \item \textbf{Complex-system flow}: parallel work across multiple subsystems followed by integration. This is appropriate when the product contains many interacting modules.
+\end{itemize}
+
+If your product includes electronics, fluid handling, and structure that must work together, a spiral or complex-system flow is often more realistic than a single-pass linear flow.
+
+\section{Departmental Structure}
+
+This section focuses on \emph{who} needs to contribute. A product development team commonly draws from:
+\begin{itemize}
+    \item marketing or user research;
+    \item engineering and technical analysis;
+    \item manufacturing or fabrication planning;
+    \item quality and testing;
+    \item purchasing or supply coordination;
+    \item finance or cost planning; and
+    \item project management.
+\end{itemize}
+
+For APID, your group does not need to create a large company chart. Instead, decide which functions are most important for your project and explain why. A sensor-heavy hydroponic product may need stronger emphasis on instrumentation and testing, whereas a structural product may need more attention to materials and fabrication.
+
+\section{Organisational Structure}
+
+This section focuses on \emph{how} authority is arranged.
+
+\begin{table}[htbp]
+\centering
+\caption{Common organisational structures for product development teams}
+\label{tab:session2-organisational-structures}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}p{0.18\textwidth}|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}p{0.26\textwidth}|}
+\hline
+\textbf{Structure} & \textbf{Main characteristic} & \textbf{Typical use in APID terms} \\
+\hline
+Functional & Work stays mainly within specialised roles or disciplines. & Suitable when the project is simple and roles are stable. \\
+\hline
+Project & The team is organised mainly around the project itself. & Suitable when the group needs fast decisions and strong coordination. \\
+\hline
+Lightweight & A project lead coordinates, but most authority remains with functional roles. & Suitable when the work is shared but not highly integrated. \\
+\hline
+Heavyweight & The project lead has stronger authority across functions and priorities. & Suitable when integration, speed, and cross-functional decisions matter greatly. \\
+\hline
+\end{tabularx}
+\end{table}
+
+Most APID groups will choose either a project structure or a lightweight structure because both support shared responsibility without requiring a full corporate hierarchy.
+
+\section{Pre-Class Preparation}
+
+Before class, each group member should prepare short notes covering the following decisions:
 \begin{enumerate}
-    \item Familiarize yourself with different types of Development Process Flows:
-    \begin{itemize}
-        \item Generic process
-        \item Spiral product development process
-        \item Complex system development process
-    \end{itemize}
-    \item Analyze the characteristics and requirements of your team's selected product.
-    \begin{enumerate}
-        \item Consider factors such as complexity, risk, and flexibility in the development process.
-    \end{enumerate}
-    \item Evaluate each Development Process Flow in relation to your product's needs and assess how each process flow aligns with the specific requirements and constraints of your team project.
-    \item Select the most suitable development process flow, for your team.
+    \item the most suitable development process type for the selected hydroponic product;
+    \item the most suitable development process flow;
+    \item the most important departments or functions needed for the project; and
+    \item the organisational structure that would best coordinate the work.
 \end{enumerate}
 
-\subsubsection{Activity 3: Selecting departmental structure} % if available
-\textbf{Objective:} \\
-The objective of this activity is to provide instructions on understanding the composition of a product development team and the departmental structure during the Rally Point phase. By familiarizing yourself with the interdisciplinary nature of product development and assessing the departmental needs for your project, you will be able to effectively organize and allocate resources within your team.
+For each decision, write one short justification based on project complexity, uncertainty, user needs, technical risks, or team coordination.
 
+\section{In-Class Activity: Consolidate the Development Strategy}
+
+In class, compare the individual proposals and agree on one team recommendation for each category.
+
+\subsection{Suggested Decision Steps}
 \begin{enumerate}
-    \item Familiarize yourself with the interdisciplinary nature of product development, which involve the contributions from various department within a company inclusive 1) marketing and sales, 2) engineering, 3) quality assurance, 4) manufacturing, 5) purchasing, 6) legal, 7) financial, and 8) project management.
-    \begin{enumerate}
-        \item You can refer to Exhibit 1-2 (Development of an electromechanical product) or Exhibit 2.7 (Tyco International) explore the different departmental structure during the rally point various types of product development projects.
-    \end{enumerate}
-    \item For your own product development project, assess whether it is necessary to maintain, reduce, or add new departments to this list. Provide a well-reasoned explanation for your chosen approach.
+    \item compare each member's proposed process type and identify the strongest justification;
+    \item agree on the development process flow that best matches the level of iteration or subsystem integration required;
+    \item decide which departments or functions are essential to the project;
+    \item choose the organisational structure that supports those functions most effectively; and
+    \item document the final decision in a short report for ITEL submission if requested.
 \end{enumerate}
 
-\subsubsection{Activity 4: Selecting Organizational structure} % if available
-\textbf{Objective:} \\
-The objective of this section in the lab manual is to guide you in understanding various organizational structures and selecting the most appropriate one for your specific product development project. By familiarizing yourself with these structures and making an informed decision, you will be able to effectively organize and manage your project team.
+\subsection{Decision Matrix Template}
 
-\begin{enumerate}
-    \item Begin by familiarizing yourself with different type of organizational structures which include 1) functional organization, 2) project organization, 3) lightweight organization, or 4) heavyweight project organization.
-    \item Determine the most appropriate organizational structure for your specific product development project. Take into account the choice you made in Activity 1 and Activity 2 from Session 2.
-\end{enumerate}
+Use Table~\ref{tab:session2-decision-matrix} if your group wants a structured way to compare options.
 
-\subsection{In-class Activities}
-\subsubsection{Activity 1: Selection of Product Development Strategy}
-\textbf{Objective:} \\
-The objective of this activity is to walk your team with the process of reviewing and selecting the appropriate product development process in a group setting. Toward the end, it is expected the team will reach a consensus on the product development process.
+\begin{table}[htbp]
+\centering
+\caption{Simple decision matrix for Session 2 selections}
+\label{tab:session2-decision-matrix}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}p{0.22\textwidth}|>{\raggedright\arraybackslash}p{0.18\textwidth}|>{\raggedright\arraybackslash}p{0.16\textwidth}|X|}
+\hline
+\textbf{Decision area} & \textbf{Selected option} & \textbf{Confidence (1--5)} & \textbf{Justification} \\
+\hline
+Development process type &  &  &  \\
+\hline
+Development process flow &  &  &  \\
+\hline
+Departmental structure &  &  &  \\
+\hline
+Organisational structure &  &  &  \\
+\hline
+\end{tabularx}
+\end{table}
 
+\section{Summary and Next Steps}
 
-\begin{enumerate}
-    \item At least, when joining this session, it is safe to say to each member of the team should already have generated multiple ideas related to the process of product development, the flow of the product development process, and the structure of different departments involved.
-    \item With this assumption, by considering ideas generated by each of the team member, discuss in group to determine
-    
-    \begin{enumerate}
-        \item The appropriate product development process
-        \item The optimal flow of the product development process
-        \item The optimal flow of the product development process, and \item The suitable departmental structure.
-    \end{enumerate}
-    \item Do a proper justification for each of selection and compile the finalized selection and submit your group report on the ITEL Page.
-\end{enumerate}
-
-
-\clearpage % or \newpage
-% {\small
-\begin{longtable}{|p{3.2cm}|p{4.2cm}|p{5.4cm}|p{2.5cm}|}
-\caption{Types of Product Development Processes with Their Features and Examples} \\
-\hline
-\textbf{Process Type} & \textbf{Description} & \textbf{Distinct Features} & \textbf{Examples} \\
-\hline
-Generic (Market-Pull) Products & The team begins with a market opportunity and selects appropriate technologies to meet customer needs. & Process generally includes distinct planning, concept development, system-level design, detail design, testing and refinement, and production ramp-up phases. & Sporting goods, furniture, tools. \\
-\hline
-Technology-Push Products & The team begins with a new technology, then finds an appropriate market. & Planning phase involves matching technology and market. Concept development assumes a given technology. & Gore-Tex rainwear, Tyvek envelopes. \\
-\hline
-Platform Products & The team assumes that the new product will be built around an established technological subsystem. & Concept development assumes a proven technology platform. & Consumer electronics, computers, printers. \\
-\hline
-Process-Intensive Products & Characteristics of the product are highly constrained by the production process. & Either an existing production process must be specified from the start, or both product and process must be developed together from the start. & Snack foods, breakfast cereals, chemicals, semiconductors. \\
-\hline
-Customized Products & New products are slight variations of existing configurations. & Similarity of projects allows for a streamlined and highly structured development process. & Motors, switches, batteries, containers. \\
-\hline
-High-Risk Products & Technical or market uncertainties create high risks of failure. & Risks are identified early and tracked throughout the process. Analysis and testing activities take place as early as possible. & Pharmaceuticals, space systems. \\
-\hline
-Quick-Build Products & Rapid modeling and prototyping enables many design-build-test cycles. & Detail design and testing phases are repeated a number of times until the product is completed or time/budget runs out. & Software, cellular phones. \\
-\hline
-Product-Service Systems & Products and their associated service elements are developed simultaneously. & Both physical and operational elements are developed, with particular attention to design of the customer experience and the process flow. & Restaurants, software applications, financial services. \\
-\hline
-Complex Systems & System must be decomposed into several subsystems and many components. & Subsystems and components are developed by many teams working in parallel, followed by system integration and validation. & Airplanes, jet engines, automobiles. \\
-\hline
-\end{longtable}
-% }
-% \end{document}
+By the end of this session, your group should have one agreed development strategy covering process type, process flow, departmental structure, and organisational structure. Keep this summary because it will influence later decisions about planning, customer needs, concept development, and project communication.

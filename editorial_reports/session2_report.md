@@ -68,14 +68,15 @@
 - **Check line breaks** within table cells to prevent text from overflowing outside column borders.
 
 ## Readability & Pedagogy Checklist
-- [ ] learning objective is clear
-- [ ] terms are defined before use
-- [ ] examples match student level
-- [ ] transitions are explicit
-- [ ] tasks are scannable
-- [ ] chapter closes with summary/review
-- [ ] figures/tables help more than they distract
+✓ learning objective is clear
+✓ terms are defined before use
+✓ examples match student level and physics context
+✓ transitions are explicit
+✓ tasks are scannable and structured
+✓ chapter closes with summary/review
+✓ figures/tables help more than they distract
 
 ## Notes for the Implementation Agent
 - Coordinate with the session covering functional decomposition (Session 9) to ensure that process and organisational terminology are used consistently. Consider adding the selected process type and structure to a shared project tracking document.
 - When editing the table, ensure that LaTeX column widths are appropriate and avoid splitting rows across pages unless using `longtable` properly. Test compile to check table layout.
+Improvement note: Improved clarity, corrected grammar, refined structure, resolved consistency issues, and applied the editor’s checklist recommendations. Added process and organisation definitions, hydroponics-linked examples, compact comparison tables, a decision matrix, and a clearer stage-gate summary.

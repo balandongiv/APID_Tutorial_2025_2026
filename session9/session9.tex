@@ -1,154 +1,139 @@
 \chapter{Functional Decomposition and Solutions}
-% this is some introduction about the topic
-\section{Pre-class Activities}
-\subsection{Activity 1: Decompose the Problem}
-\textbf{Objective:} \\
 
-The objective of this activity is to analyse the selected product's primary functions and decomposing the problem to identify its major components or subsystems. By documenting the chosen approach for problem decomposition and creating function diagrams, you will gain a clearer understanding of the product's functional elements and their relationships.
+\section{Session Overview}
 
+Functional decomposition helps your group move from customer needs and specifications toward actual concept generation. Instead of thinking immediately about one final design, you first break the product into functions, identify the most critical sub-functions, and search for multiple ways to solve them.
+
+By the end of this session, you should be able to:
 \begin{enumerate}
-    \item Analyze the product's primary functions and identify the major components or subsystems that contribute to its operation.
-    \begin{enumerate}
-        \item This step involves gaining a clear understanding of the overall function of the product.
-    \end{enumerate}
-    \item Choose one of the following approaches for problem decomposition:
-    \begin{enumerate}
-        \item Functional Decomposition
-        \item Decomposition by Sequence of User Actions
-        \item Decomposition by Key Customer Needs
-    \end{enumerate}
-    \item Document (justify the selection) the chosen approach for problem decomposition and apply it to the selected product.
-    \begin{enumerate}
-        \item Use appropriate diagrams, such as function diagrams or flowcharts, to visually represent the decomposition process and the relationships between different components or subfunctions.
-        \item Make sure to use VERB when expressing the functional element of the individual operation and operation.
-        For example
-        \begin{itemize}
-            \item Make Coffee
-            \item Extract Coffer
-            \item Keep Coffee
-            \item Warm Water
-            \item Move Water
-            \item Give Heat
-        \end{itemize}
-    \end{enumerate}
-    \item Also, it is wise to have a write up about how the functional element works for ease of understanding
-    \item Note that at this stage the goal is to describe the functional elements of the product without implying a specific technological working principle for the product concept.
-    \item Save the output as a PDF when submitting to ITEL
+    \item choose an appropriate decomposition approach for the selected product;
+    \item describe functions using generic verb--noun pairs;
+    \item build a requirement--function matrix; and
+    \item document multiple solution options for critical sub-functions.
 \end{enumerate}
 
-\subsubsection{Activity 2: Search and Find Solutions} % if available
-\textbf{Objective:} \\ 
-The objective of this activity is to walk you in executing comprehensive searches and gathering solutions for critical sub-problems related to the selected product and ultimately the finding may help you in generating concepts that ensure the product's smooth functionality.
+\section{What Is Functional Decomposition?}
 
-\textbf{Procedure:}
+Functional decomposition breaks a complex product into smaller functional elements so that the team can understand what the product must \emph{do} before deciding exactly how it will do it. Good functional descriptions stay general. For example, \textit{move solution} is better than \textit{use a 12 V pump}, because the first phrase keeps the design space open.
+
+\section{Decomposition Approaches}
+
+Choose one approach that best fits your product and explain why.
+
+\begin{itemize}
+    \item \textbf{Functional decomposition}: groups the product by what it must do, using verb--noun pairs such as \textit{store solution}, \textit{move solution}, or \textit{monitor level}.
+    \item \textbf{Sequence of user actions}: follows what the user does step by step, such as \textit{fill tank}, \textit{start system}, \textit{check display}, and \textit{clean parts}.
+    \item \textbf{Key customer needs}: organises the product around major needs such as easy monitoring, stable flow, or easy maintenance.
+\end{itemize}
+
+Functional decomposition is usually the strongest option when the product contains technical subsystems and the team needs to understand how the functions interact.
+
+\section{Pre-Class Activity 1: Decompose the Product}
+
+Before class, analyse the product individually and prepare a first draft of the functional structure.
+
+\subsection{Procedure}
 \begin{enumerate}
-    \item To conduct an external search, you may consider sources such as academic publications, industry reports, technical journals, and relevant online platforms.
-    \begin{enumerate}
-        \item The combination between search engine and appropriate search keywords/phrases that are specific to each sub-problem may help in pinpointing/retrieving relevant information.
-    \end{enumerate}
-    \item Jot down and compile at least five different solutions for each critical sub-problem obtained from the external/internal search.
-    \begin{enumerate}
-        \item For the benefit of other reader (your team member, and module convener), it is strongly recommended to details, such as the source, author, publication date, and a brief description of each solution.
-    \end{enumerate}
+    \item identify the product's overall function;
+    \item list the major sub-functions using verb--noun pairs;
+    \item choose one decomposition approach and justify it briefly;
+    \item sketch a function tree, block diagram, or structured list; and
+    \item write one short note explaining each major function.
 \end{enumerate}
 
-\section{In-class Activities}
-\subsection{Activity 1: Decompose the Problem}
-Compile all findings and discuss with all members to determine the best approach to decompose the problem into its major components or subsystems. Each member should explain their selection to their team members. Once consensus is reached, choose one of the following approaches for problem decomposition:
-\begin{enumerate}
-    \item Functional Decomposition
-    \item Decomposition by Sequence of User Actions
-    \item Decomposition by Key Customer Needs
-\end{enumerate}
+Avoid locking the functions to one technical solution too early. Keep the wording broad enough to support multiple concepts later.
 
+\subsection{Hydroponic Example}
 
-\begin{figure}[h!]
+For a nutrient delivery concept, a simple function list might include:
+\begin{itemize}
+    \item store nutrient solution;
+    \item move nutrient solution;
+    \item distribute flow;
+    \item monitor liquid level; and
+    \item simplify cleaning.
+\end{itemize}
+
+\subsection{Decomposition Template}
+
+Use Table~\ref{tab:session9-decomposition-template} to record your draft.
+
+\begin{table}[htbp]
 \centering
-\begin{tikzpicture}[node distance=1.5cm]
+\caption{Template for documenting a decomposition approach}
+\label{tab:session9-decomposition-template}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}p{0.22\textwidth}|>{\raggedright\arraybackslash}p{0.2\textwidth}|X|}
+\hline
+\textbf{Item} & \textbf{Draft entry} & \textbf{Notes} \\
+\hline
+Overall function &  &  \\
+\hline
+Chosen approach &  & Why this approach fits the product \\
+\hline
+Major sub-function 1 &  &  \\
+\hline
+Major sub-function 2 &  &  \\
+\hline
+Major sub-function 3 &  &  \\
+\hline
+\end{tabularx}
+\end{table}
 
-\tikzstyle{startstop} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm,text centered, draw=black, fill=cyan!20]
-\tikzstyle{arrow} = [thick,->,>=stealth]
+\section{Pre-Class Activity 2: Search for Solution Options}
 
-\node (start) [startstop] {Plant seed using seed planter};
-\node (load) [startstop, below of=start] {Load seed to compartment};
-\node (depth) [startstop, below of=load] {Determine and adjust planting depth};
-\node (stab) [startstop, below of=depth] {Stab soil/Sow seed in soil};
-\node (trigger) [startstop, below of=stab] {Trigger mechanism to plant seed};
+For each critical sub-function, identify at least five possible solutions from internal brainstorming or external research.
 
-\draw [arrow] (start) -- (load);
-\draw [arrow] (load) -- (depth);
-\draw [arrow] (depth) -- (stab);
-\draw [arrow] (stab) -- (trigger);
+\subsection{Solution Search Criteria}
 
-\end{tikzpicture}
-\caption{Minimum planting layout in Session 8}
-\label{fig:planting_flowchart}
-\end{figure}
+When recording solutions, consider:
+\begin{itemize}
+    \item feasibility;
+    \item alignment with the function and customer needs;
+    \item technical maturity;
+    \item likely resource requirements; and
+    \item source credibility.
+\end{itemize}
 
+\begin{table}[htbp]
+\centering
+\caption{Solution search template for critical sub-functions}
+\label{tab:session9-solution-template}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}p{0.18\textwidth}|>{\raggedright\arraybackslash}p{0.18\textwidth}|>{\raggedright\arraybackslash}p{0.18\textwidth}|X|>{\raggedright\arraybackslash}p{0.16\textwidth}|}
+\hline
+\textbf{Sub-function} & \textbf{Candidate solution} & \textbf{Source} & \textbf{Description} & \textbf{Feasibility notes} \\
+\hline
+ &  &  &  &  \\
+\hline
+ &  &  &  &  \\
+\hline
+ &  &  &  &  \\
+\hline
+\end{tabularx}
+\end{table}
 
-or another example of functional decomposition
+\section{In-Class Activity 1: Agree on the Decomposition}
 
+In class, compare the individual decompositions and agree on one shared structure.
 
+\begin{enumerate}
+    \item compare the different approaches proposed by team members;
+    \item choose the approach that best matches the product and justify the choice;
+    \item refine the function list so that the wording stays technology-agnostic; and
+    \item identify which sub-functions are most critical for later concept generation.
+\end{enumerate}
 
-\begin{minted}[
-  fontsize=\small,
-  linenos,
-  breaklines=true,
-  frame=lines,
-  label=code:importJson
-]{text}
-Manual Seed Planter System
-├── Efficient Seed Storage and Dispensing Mechanism
-│   ├── Seed Metering Plate
-│   ├── Seed Metering Drum
-│   ├── Auger-Based Funnel
-│   ├── Vibratory Feeder
-│   ├── Gravity Feed Chute
-│   ├── Belt Conveyor with Seed Pockets (belt with holes carrying seeds)
-│   ├── Air Suction Pickup (vacuum picks and releases single seeds)
-│   ├── Peristaltic Tube Dispenser (seeds squeezed along flexible tubing)
-│   └── Cartridge Loading System (pre-loaded seed cartridges)
-│
-├── Efficient Seed Sowing
-│   ├── Syringe Tip Dispensing
-│   ├── Spring Loaded Gate
-│   ├── Flap Valve Mechanism
-│   ├── Rotating Nozzle Dispenser
-│   ├── Telescopic Tube Dispenser (tube that extends downward to sow)
-│   ├── Flexible Nozzle Guide (rubbery nozzle that can be aimed precisely)
-│   ├── Motorized Dropper (electric controlled seed dropping)
-│   └── Gravity Dropper Tube (simple tube relying on gravity but with guidance)
-│
-└── Planting Depth Control
-    ├── Adjustable Depth Control Plate
-    ├── Depth Sensor Gauge
-    ├── Wheel-Based Depth Setter
-    ├── Adjustable Skid Shoe
-    ├── Spring-Loaded Plunger (presses the seed to a set depth)
-    ├── Soil Contact Sensor (detects soil pressure to adjust depth automatically)
-    ├── Telescopic Arm Adjustment (manual or motorized telescoping arm)
-    └── Mechanical Stopper Rod (preset rod that limits downward travel)
-\end{minted}
+\section{In-Class Activity 2: Build the Requirement--Function Matrix}
 
-
-\subsubsection{Activity 2: Generate requirement vs function matrix.
-}
-
-
-
-Once a comprehensive list of project functions has been identified, the next crucial step is to assess how well these functions align with customer needs. It is equally important to ensure that the number of functions is balanced — sufficient to cover all requirements without introducing unnecessary complexity.
-
-To systematically perform this evaluation, we develop a Requirement vs Function Matrix as shown in Table \ref{tab:req_matrix_table}. This matrix provides a clear and organized method for mapping each customer requirement to the corresponding functions intended to fulfill them. It serves as a visual "roadmap," illustrating the connection between what needs to be achieved and how it will be accomplished.
-
-
-
-
-
-
+The requirement--function matrix checks whether the functions you identified are sufficient to satisfy the needs from Session 7 and the metrics from Session 8. If a major requirement is not supported by any function, the decomposition is incomplete.
 
 \input{session9/rfm_table_landscape}
 
-\subsubsection{Activity 3: Search and Find Solutions} % if available
-Compile all findings and discuss with all members to determine whether it is more advantageous to select the best different solutions for each critical sub-problem obtained from the external/internal search drafted by one of the members, or to combine findings from all team members. Once consensus is reached, compile at least five different solutions for each critical sub-problem obtained from the external/internal search that reflect the collective agreement of all team members.
+\section{In-Class Activity 3: Consolidate the Solution Search}
 
+Merge the best solution options into one shared team table. Record at least five solutions for each critical sub-function and note where the evidence came from. Academic papers, patents, technical datasheets, and credible industrial sources are preferable to unsupported claims.
 
+\section{Summary and Next Steps}
+
+At the end of this session, your group should have a shared functional decomposition, a requirement--function matrix, and a documented list of solution options for the key sub-functions. These outputs will become the raw material for concept generation in Session 10.

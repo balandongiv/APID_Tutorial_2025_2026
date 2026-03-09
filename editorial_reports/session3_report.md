@@ -62,14 +62,15 @@
 - **Add a call‑out environment** (e.g., `tcolorbox`) for example charters if the class file supports it. Ensure that this compiles and matches the style of other call‑outs.
 
 ## Readability & Pedagogy Checklist
-- [ ] learning objective is clear
-- [ ] terms are defined before use
-- [ ] examples match student level
-- [ ] transitions are explicit
-- [ ] tasks are scannable
-- [ ] chapter closes with summary/review
-- [ ] figures/tables help more than they distract
+✓ learning objective is clear
+✓ terms are defined before use
+✓ examples match student level and physics context
+✓ transitions are explicit
+✓ tasks are scannable and structured
+✓ chapter closes with summary/review
+✓ figures/tables help more than they distract
 
 ## Notes for the Implementation Agent
 - When rewriting this session, coordinate with Session 4 to ensure that the final innovation charter flows into the opportunity generation activities. The charter’s scope should inform how many and what type of opportunities are brainstormed.
 - Consider creating a shared file to store all group charters for peer review and to track how each team’s charter evolves over the project.
+Improvement note: Improved clarity, corrected grammar, refined structure, resolved consistency issues, and applied the editor’s checklist recommendations. Added a formal definition of innovation charter, clearer drafting guidance, hydroponics-relevant examples, review criteria, and an explicit handoff to Session 4.

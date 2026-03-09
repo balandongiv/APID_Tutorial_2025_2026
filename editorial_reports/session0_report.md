@@ -84,16 +84,17 @@
 - **Compile the document** after changes to ensure that cross references and the table of contents update correctly.
 
 ## Readability & Pedagogy Checklist
-- [ ] learning objective is clear
-- [ ] terms are defined before use
-- [ ] examples match student level
-- [ ] transitions are explicit
-- [ ] tasks are scannable
-- [ ] chapter closes with summary/review
-- [ ] figures/tables help more than they distract
+✓ learning objective is clear
+✓ terms are defined before use
+✓ examples match student level
+✓ transitions are explicit
+✓ tasks are scannable
+✓ chapter closes with summary/review
+✓ figures/tables help more than they distract
 
 ## Notes for the Implementation Agent
 - Coordinate with other sessions to ensure that definitions (e.g., LLM, opportunity identification, concept screening) are consistent across the book. Consider creating a shared glossary file.
 - When rewriting the introduction, preserve the author’s intent of encouraging experiential learning and teamwork, but align the tone to a professional but approachable style.
 - Ensure that any added diagrams or tables use consistent formatting with the rest of the manuscript and are placed near the relevant text.
 - Before finalising, compile the LaTeX project to confirm that all includes are resolved and that the revised introduction integrates smoothly with subsequent sessions.
+Improvement note: Improved clarity, corrected grammar, refined structure, resolved consistency issues, and applied the editor’s checklist recommendations. Added APID-specific learning objectives, acronym definitions, hydroponics-and-physics context, a deliverables table, clearer assessment guidance, and a rewritten course preface.
