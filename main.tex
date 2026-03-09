@@ -1,33 +1,33 @@
 \documentclass{clgrammar}
-\usepackage{multirow}
-\usepackage{tabularx}
-\usepackage{booktabs}
-\usepackage{makecell}
+% \usepackage{multirow}
+% \usepackage{tabularx}
+% \usepackage{booktabs}
+% \usepackage{makecell}
+% % \usepackage{float}
+% \newif\iflecturer
+% \lecturertrue      % show justifications/solutions/ remark,notes
+% % \lecturerfalse      % student clean exam
 
-\newif\iflecturer
-\lecturertrue      % show justifications/solutions/ remark,notes
-% \lecturerfalse      % student clean exam
-
-\iflecturer
-  \newtcolorbox{lectureronly}{
-    colback=yellow!10!white,
-    colframe=yellow!50!black,
-    title=Lecturer Only Content,
-    fonttitle=\bfseries,
-    fontupper=\small\itshape
-  }
-\else
-  \newtcolorbox{lectureronly}{
-    visible=false,
-    height=0pt,
-    left=0pt, right=0pt, top=0pt, bottom=0pt, boxsep=0pt,
-    boxrule=0pt, colframe=white, colback=white
-  }
+% \iflecturer
+%   \newtcolorbox{lectureronly}{
+%     colback=yellow!10!white,
+%     colframe=yellow!50!black,
+%     title=Lecturer Only Content,
+%     fonttitle=\bfseries,
+%     fontupper=\small\itshape
+%   }
+% \else
+%   \newtcolorbox{lectureronly}{
+%     visible=false,
+%     height=0pt,
+%     left=0pt, right=0pt, top=0pt, bottom=0pt, boxsep=0pt,
+%     boxrule=0pt, colframe=white, colback=white
+%   }
   % A better way to hide it completely including spacing might be needed, 
   % but tcolorbox with visible=false usually works well enough or using 'comment' package.
   % However, if we want to truly skip compilation of the body to avoid errors in hidden mode:
   % \excludecomment{lectureronly} % requires 'comment' package
-\fi
+% \fi
 
 \title{TUTORIAL APPLIED PHYSICS IN INDUSTRIAL DESIGN}
 
@@ -43,7 +43,7 @@
 \include{preface}
 
 \mainmatter
-\include{session0_introduction/introduction}
+% \include{session0_introduction/introduction}
     \include{session1/session1}
     \include{session2/session2}
     \include{session3/session3}

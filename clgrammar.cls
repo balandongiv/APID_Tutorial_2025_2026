@@ -1,24 +1,44 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{clgrammar}[2020/04/25 Conlang Grammar Book]
+\ProvidesClass{clgrammar}[2026/03/09 Cleaner Conlang / tutorial book class]
 
+% Pass all options through to book
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{book}}
 \ProcessOptions\relax
-
-\newcommand{\headlinecolor}{\normalcolor}
 \LoadClass{book}
-\RequirePackage{xcolor}
-\definecolor{chapter}{rgb}{0.2, 0.25, 0.4}
-\definecolor{section}{rgb}{0.2, 0.45, 0.3}
-\definecolor{cover}{RGB}{0, 120, 60}
-\definecolor{background}{rgb}{1.0, 0.99, 0.95}
 
-% IPA support
+% -----------------------------------------------------------------------------
+% Required packages
+% -----------------------------------------------------------------------------
+\RequirePackage{iftex}
+\ifPDFTeX
+  \ClassError{clgrammar}{This class requires XeLaTeX or LuaLaTeX}{%
+    You loaded fontspec-dependent code. Compile with XeLaTeX or LuaLaTeX.}
+\fi
+
 \RequirePackage{fontspec}
-%\setmainfont{Noto Serif}
-%\setsansfont{Noto Sans}
-%\setmonofont{Noto Mono}
-
-% Useful packages
+\RequirePackage{xcolor}
+\RequirePackage[
+  paper=a4paper,
+  inner=28mm,
+  outer=24mm,
+  top=28mm,
+  bottom=28mm,
+  headheight=15pt,
+  headsep=10pt,
+  footskip=14mm
+]{geometry}
+\RequirePackage{fancyhdr}
+\RequirePackage{titling}
+\RequirePackage[
+  bookmarks=true,
+  bookmarksopen=true,
+  bookmarksnumbered=true,
+  pdfstartview=FitH,
+  hidelinks
+]{hyperref}
+\RequirePackage{titlesec}
+\RequirePackage{graphicx}
+\RequirePackage{amsmath}
 \RequirePackage{verbatim}
 \RequirePackage{tcolorbox}
 \tcbuselibrary{listingsutf8}
@@ -29,108 +49,142 @@
 \RequirePackage{listings}
 \RequirePackage{pdflscape}
 \RequirePackage{longtable}
-\RequirePackage[draft]{minted}
-\RequirePackage{amsmath}
 \RequirePackage{environ}
-\RequirePackage[
-    bookmarks=true,
-    bookmarksopen=true,
-    bookmarksnumbered=true,
-    pdfstartview=FitH,
-    colorlinks=false,
-    linkcolor=blue,
-    citecolor=red,
-    urlcolor=magenta
-]{hyperref}
+\RequirePackage[draft]{minted}
+\RequirePackage{anyfontsize}
+\RequirePackage{multirow}
+\RequirePackage{tabularx}
+\RequirePackage{booktabs}
+\RequirePackage{makecell}
 
-% Fancy formatting
-% \RequirePackage{fancyhdr}
-% \RequirePackage{titling}
-% \RequirePackage{geometry}
-% \pagestyle{fancy}
-% \fancyhf{}
-% \fancyhead[LE,RO]{\leftmark}
-% \fancyhead[RE,LO]{\rightmark}
-% \fancyfoot[LE,RO]{\thetitle}
-% \fancyfoot[RE,LO]{\theauthor}
-% \fancyhead[CE,CO]{\thepage}
-% \fancyfoot[CE,CO]{\thepage}
-% \AtBeginDocument{
-%     \setlength{\oddsidemargin}{2mm}
-%     \setlength{\evensidemargin}{2mm}
-% %    \setlength{\marginpar}{0pt}
-% %    \setlength{\marginparpush}{0pt}
-%     \setlength{\hoffset}{0pt}
-%     \setlength{\parskip}{4pt}
-%     \renewcommand{\headrulewidth}{1pt}
-%     \renewcommand{\footrulewidth}{1pt}
-% }
-\RequirePackage{fancyhdr}
-\RequirePackage{geometry}
-\RequirePackage{titling}
+% -----------------------------------------------------------------------------
+% Engine check and fonts
+% -----------------------------------------------------------------------------
+% already handled above before fontspec
+
+% -----------------------------------------------------------------------------
+% Core appearance
+% -----------------------------------------------------------------------------
+\definecolor{chapter}{rgb}{0.2, 0.25, 0.4}
+\definecolor{section}{rgb}{0.2, 0.45, 0.3}
+\definecolor{cover}{RGB}{0, 120, 60}
+\definecolor{background}{rgb}{1.0, 0.99, 0.95}
+
+\newcommand{\headlinecolor}{\normalcolor}
+
+% -----------------------------------------------------------------------------
+% Layout and page style
+% -----------------------------------------------------------------------------
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4pt}
 
 \pagestyle{fancy}
 \fancyhf{}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
 
-\AtBeginDocument{
-    \setlength{\oddsidemargin}{2mm}
-    \setlength{\evensidemargin}{2mm}
-    \setlength{\hoffset}{0pt}
-    \setlength{\parskip}{4pt}
-    \setlength{\headheight}{15pt}
-    \renewcommand{\headrulewidth}{1pt}
-    \renewcommand{\footrulewidth}{1pt}
-}
-
-\renewcommand{\chaptermark}[1]{%
-  \markboth{Chapter \thechapter.\ #1}{}}
-\renewcommand{\sectionmark}[1]{%
-  \markright{\thesection\ #1}}
+\renewcommand{\chaptermark}[1]{\markboth{Session \thechapter\enspace #1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection\enspace #1}}
 
 \fancyhead[LE]{\nouppercase{\leftmark}}
 \fancyhead[RO]{\nouppercase{\rightmark}}
 \fancyfoot[C]{\thepage}
-\fancyfoot[LE,RO]{\thetitle}
-\fancyfoot[RE,LO]{\theauthor}
-% Better section titles
-\RequirePackage{titlesec}
-\titleformat{\chapter}[frame]{\Huge\bfseries}
-    {{\color{chapter}\Large Session \thechapter}}{0em}
-    {\thispagestyle{fancy}}
-\titleformat{\section}[block]
-    {\normalfont\bfseries\huge}
-    {{\color{section}\large Section \thesection:}}{6pt}{}
 
-% Better title page
-\RequirePackage{anyfontsize}
-\RequirePackage{graphicx}
-\newcommand{\HUGE}{\fontsize{50}{60}}
-\newcommand{\thesubtitle}{2025/2026}
-\newcommand{\subtitle}[1]{\renewcommand{\thesubtitle}{#1}}
-\renewcommand{\maketitle}{{\bfseries
-    \thispagestyle{empty}
-    \begin{center}
-        {\HUGE\textsc{\thetitle}} \\
-        \vspace{0.5cm}
-        {\Large\emph{\thesubtitle}} \\
-        \vspace{1cm}
-        % \includegraphics[width=\textwidth]{images/cover.png}
-        \pagecolor{cover}
-        \vfill
-        \theauthor
-    \end{center}
-    \newpage
-    Foo
-    \pagecolor{background}
-    \setcounter{page}{0}
-}}
-
-\newenvironment{gloss}{
-    \begin{center}
-        \begin{tabular}{|c|}
-        \hline
-}{
-        \hline
-        \end{tabular}
-    \end{center}
+% Make chapter opening pages consistent with the rest of the document.
+\fancypagestyle{plain}{%
+  \fancyhf{}
+  \renewcommand{\headrulewidth}{0.4pt}
+  \fancyhead[LE]{\nouppercase{\leftmark}}
+  \fancyhead[RO]{\nouppercase{\rightmark}}
+  \fancyfoot[C]{\thepage}
 }
+
+% -----------------------------------------------------------------------------
+% Section and chapter headings
+% -----------------------------------------------------------------------------
+\titleformat{\chapter}[display]
+  {\normalfont\bfseries\color{chapter}}
+  {\filleft\Large Session \thechapter}
+  {0.8ex}
+  {\titlerule[0.8pt]\vspace{1ex}\filright\Huge}
+  [\vspace{1ex}\titlerule]
+
+\titlespacing*{\chapter}{0pt}{0pt}{2.5ex}
+
+\titleformat{\section}
+  {\normalfont\Large\bfseries\color{section}}
+  {Section \thesection}{0.75em}{}
+
+\titleformat{\subsection}
+  {\normalfont\large\bfseries}
+  {\thesubsection}{0.75em}{}
+
+% -----------------------------------------------------------------------------
+% Lecturer toggle
+% -----------------------------------------------------------------------------
+\newif\iflecturer
+\lecturertrue
+% \lecturerfalse
+
+\iflecturer
+  \newtcolorbox{lectureronly}{
+    colback=yellow!10!white,
+    colframe=yellow!50!black,
+    title=Lecturer Only Content,
+    fonttitle=\bfseries,
+    fontupper=\small\itshape
+  }
+\else
+  \newtcolorbox{lectureronly}{
+    visible=false,
+    height=0pt,
+    left=0pt, right=0pt, top=0pt, bottom=0pt, boxsep=0pt,
+    boxrule=0pt, colframe=white, colback=white
+  }
+\fi
+
+% -----------------------------------------------------------------------------
+% Title page helpers
+% -----------------------------------------------------------------------------
+\newcommand{\booksubtitle}{2025/2026}
+\newcommand{\subtitle}[1]{\renewcommand{\booksubtitle}{#1}}
+\newcommand{\HUGE}{\fontsize{40}{48}\selectfont}
+
+\renewcommand{\maketitle}{%
+  \begin{titlepage}
+    \pagecolor{cover}%
+    \color{white}%
+    \thispagestyle{empty}%
+    \begin{center}
+      \vspace*{0.12\textheight}
+      {\HUGE\bfseries\textsc{\thetitle}\par}
+      \vspace{0.8cm}
+      {\Large\itshape \booksubtitle\par}
+      \vfill
+      {\Large \theauthor\par}
+      \vspace*{0.08\textheight}
+    \end{center}
+  \end{titlepage}%
+  \clearpage
+  \pagecolor{background}%
+}
+
+% -----------------------------------------------------------------------------
+% Simple boxed gloss environment
+% -----------------------------------------------------------------------------
+\newenvironment{gloss}
+  {%
+    \par\medskip
+    \begin{center}
+    \begin{tabular}{|p{0.9\linewidth}|}
+    \hline
+    \ignorespaces
+  }
+  {%
+    \unskip\\\hline
+    \end{tabular}
+    \end{center}
+    \par\medskip
+  }
+
+\endinput
