@@ -14,14 +14,13 @@
     "vscode": {
       "extensions": [
         "James-Yu.latex-workshop",
-
         "ms-python.python",
         "ms-toolsai.jupyter",
         "charliermarsh.ruff",
         "ms-python.black-formatter",
-
         "esbenp.prettier-vscode",
-        "streetsidesoftware.code-spell-checker"
+        "streetsidesoftware.code-spell-checker",
+        "openai.chatgpt"
       ],
       "settings": {
         // ----- LaTeX Workshop -----
