@@ -89,17 +89,24 @@ Table~\ref{tab:session7-question-template} can be used to record your prompts.
 
 \section{Pre-Class Activity 2: Translate Customer Statements into Needs}
 
-After collecting observations, imagined use cases, or preliminary feedback, convert each customer statement into a needs statement.
+% After collecting observations, imagined use cases, or preliminary feedback, convert each customer statement into a needs statement.
+\begin{enumerate}
+    \item Imagine performing an everyday task using the chosen product but with an assumption that you encounter frustrations and difficulties performing the task. Based on this imaginative experience, identify the needs that the product's developer may have overlooked. Based on this experience, generate a customer statement.
+    \item If time permits, observe someone else performing an everyday task using the chosen product and pay special attention to the frustrations and difficulties that person encounters.
+    \begin{enumerate}
+        \item Seek feedback from that person and generate a customer statement.
+    \end{enumerate}
+    \item Once you have generated the customer statements either by imaginative experience or feedback from a person, translate these customer statements into proper needs statements as per \ref{sec:Translation_guidance}.
+\end{enumerate}
 
 \subsection{Translation Guidance}
-
+\label{sec:Translation_guidance}
 A strong needs statement should:
-\begin{itemize}
-    \item focus on what the product should achieve, not on the exact solution;
-    \item remain concise and specific;
-    \item avoid embedded assumptions about technology; and
-    \item reflect the customer's underlying problem.
-\end{itemize}
+    \begin{enumerate}
+        \item Ensure that the needs statements are concise, specific, and clearly articulate the underlying requirement.
+        \item Use clear and unambiguous language to accurately represent the customer's needs.
+        \item Avoid any assumptions or biases when translating the customer statements into needs statements.
+    \end{enumerate}
 
 % Table~\ref{tab:session7-needs-example} shows a hydroponic example.
 
@@ -142,20 +149,42 @@ A strong needs statement should:
 \end{tabular}
 \caption{Customer Statements and Corresponding Need Statements}
 \end{table}
+
+
 \section{Pre-Class Activity 3: Consider Lead Users and Extreme Users}
 
-Lead users and extreme users can reveal needs that ordinary users may not express clearly.
+% Lead users and extreme users can reveal needs that ordinary users may not express clearly.
 
-\begin{itemize}
-    \item A \textbf{lead user} might be an experienced hydroponic grower who has already created workarounds for monitoring or dosing problems.
-    \item An \textbf{extreme user} might be someone operating in a very small apartment, in a very hot environment, or under strict cleaning constraints.
-\end{itemize}
+% \begin{itemize}
+%     \item A \textbf{lead user} might be an experienced hydroponic grower who has already created workarounds for monitoring or dosing problems.
+%     \item An \textbf{extreme user} might be someone operating in a very small apartment, in a very hot environment, or under strict cleaning constraints.
+% \end{itemize}
 
-Write a short note explaining whether these user groups are important for your product and why. If they are relevant, identify what special insight they may provide.
+% Write a short note explaining whether these user groups are important for your product and why. If they are relevant, identify what special insight they may provide.
+The objective of this activity is reflect whether is essential to include lead users and extreme users in a survey related to your team's chosen product.
 
-\section{Optional Reflection: Needs and Innovation}
+\smallskip
+\noindent
+To begin
+\begin{enumerate}
+    \item Reflect the objectives of the survey and the concept of lead users and extreme users.
+    \item Consider the following points to determine whether it is essential to interview these two user groups based on objectives of the survey:
+    \begin{enumerate}
+        \item Lead Users:
+        \begin{itemize}
+            \item Assess whether lead users possess any attribute (e.g., unique insights, expertise, or experiences) that can contribute to understanding emerging needs and trends as well as the influence they may have on shaping future product developments or improvements.
+        \end{itemize}
+        \item Extreme Users:
+        \begin{itemize}
+            \item Assess whether extreme users can provide valuable insights into edge cases or challenging scenarios that may not occur in regular usage as well as their ability to help identify areas of improvement or innovation that cater to specific user segments.
+        \end{itemize}
+    \end{enumerate}
+    \item Note down your analysis and justification.
+\end{enumerate}
 
-Use this prompt for a short discussion or reflective paragraph: How can a carefully identified unmet need lead to a novel product concept? Which hidden or latent need in your hydroponic project might create the biggest design opportunity?
+% \section{Optional Reflection: Needs and Innovation}
+
+% Use this prompt for a short discussion or reflective paragraph: How can a carefully identified unmet need lead to a novel product concept? Which hidden or latent need in your hydroponic project might create the biggest design opportunity?
 
 \section{In-Class Activity: Build the Customer Needs Table}
 
@@ -173,25 +202,15 @@ Your group should prepare a table containing:
 
 Table~\ref{tab:session7-group-template} provides the recommended format.
 
-\begin{table}[htbp]
-\centering
-\caption{Compiled customer statements and interpreted needs for the selected hydroponic product}
-\label{tab:session7-group-template}
-\renewcommand{\arraystretch}{1.2}
-\begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}p{0.16\textwidth}|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}p{0.16\textwidth}|}
-\hline
-\textbf{Prompt or theme} & \textbf{Customer statement} & \textbf{Interpreted need} & \textbf{Variable type} \\
-\hline
-Typical use &  &  &  \\
-\hline
-Like &  &  &  \\
-\hline
-Dislike &  &  &  \\
-\hline
-Suggested improvement &  &  &  \\
-\hline
-\end{tabularx}
-\end{table}
+
+
+\input{session7/tab_hydroponic_user_needs.tex}
+
+Lecturer only
+\input{session7/tab_customer_needs_thermostat.tex}
+
+While optional, you may create a new column at the end of the table, to indicate what type of need the interpreted needs (direct, latent, constant, variable, general, niche) is being addressed.
+
 
 If your group uses an LLM to help organise responses, document the prompts used and verify that the grouped output still reflects the actual evidence collected.
 
